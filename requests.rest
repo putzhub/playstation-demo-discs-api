@@ -20,3 +20,6 @@ Content-Type: application/json
     "release_date": "1999-09-01T00:00:00",
     "description": "Try’em before you buy’ em!"
 }
+
+### - Delete demo disc
+DELETE http://localhost:8000/api/disc/SCUS-94211

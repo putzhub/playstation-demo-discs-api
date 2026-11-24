@@ -58,11 +58,24 @@ app.post("/api/discs/", (req, res) => {
     res.send(entry)
 });
 
+//DELETE
+app.delete("/api/disc/:id", (req, res) => {
+    const id = req.params.id;
+    const disc = demo_discs.find(d => d.id === id);
+
+    if(disc){
+        demo_discs = demo_discs.filter(d => d.id !== id);
+        res.status(200).end("Successfully deleted: "+disc.title)
+    } else {
+        res.status(404).end("Could not delete disc: Does not exist.");
+    }
+});
+
 //Middleware enabled after routes will be processed after them.
 const unknownEndpoint = (request, response) => {
-  response.status(404).send({ error: 'unknown endpoint' })
+  response.status(404).send({ error: '404 - unknown endpoint' })
 }
 
-app.use(unknownEndpoint)
+app.use(unknownEndpoint);
 
 app.listen(process.env.PORT || PORT, () => console.log(`Running on port: ${PORT}`));
