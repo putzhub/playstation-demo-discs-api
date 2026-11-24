@@ -1,0 +1,15 @@
+### - Return all discs
+GET http://localhost:8000/api/discs
+
+### - Return specific disc
+
+GET http://localhost:8000/api/disc/SCUS-94211
+
+### - Add new disc
+
+POST http://localhost:8000/api/discs
+Content-Type: application/json
+
+{
+    //tbd
+}
