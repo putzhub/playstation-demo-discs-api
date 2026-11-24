@@ -5,11 +5,18 @@ GET http://localhost:8000/api/discs
 
 GET http://localhost:8000/api/disc/SCUS-94211
 
+### - Return 404 on failure
+
+GET http://localhost:8000/api/disc/not-real
+
 ### - Add new disc
 
 POST http://localhost:8000/api/discs
 Content-Type: application/json
 
 {
-    //tbd
+    "id": "SCUS-94463",
+    "title": "Interactive CD Sampler Disc - Volume 11",
+    "release_date": "1999-09-01T00:00:00",
+    "description": "Try’em before you buy’ em!"
 }
